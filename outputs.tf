@@ -1,3 +1,7 @@
+output "cognitive_account_customer_managed_keys_id" {
+  description = "Map of id values across all cognitive_account_customer_managed_keys, keyed the same as var.cognitive_account_customer_managed_keys"
+  value       = { for k, v in azurerm_cognitive_account_customer_managed_key.cognitive_account_customer_managed_keys : k => v.id }
+}
 output "cognitive_account_customer_managed_keys_cognitive_account_id" {
   description = "Map of cognitive_account_id values across all cognitive_account_customer_managed_keys, keyed the same as var.cognitive_account_customer_managed_keys"
   value       = { for k, v in azurerm_cognitive_account_customer_managed_key.cognitive_account_customer_managed_keys : k => v.cognitive_account_id }
